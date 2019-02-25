@@ -65,5 +65,5 @@ Average: 55.67 Microseconds
 
 	Looking at the data, it is clear to see that using array notation to access data is
 far slower than using pointer notation to access that same data. Because the pointer must start
-from scratch every time with array notation, it takes far longer to move somewhere, wheresas 
+from scratch every time with array notation, it takes far longer to move somewhere, whereas 
 pointer notation means it just moves over 1 every time, which is very quick and easy to execute.
