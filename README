@@ -1,0 +1,69 @@
+	This project allows us to look at the difference between array notation (a[i] and  *(a+i) 
+and pointer notation (*(a++)) when sorting. There are 3 sort functions, sort_difference, 
+sort_difference2, and sort_difference3. When calling the program, you can build from sorttest or
+sorttest2. Sorttest1 only will use sort_difference, while you can specificy with sorttest2. 
+Sorttest1 takes unlimited arguments and lets you give a set of numbers to sort.
+Sorttest2 takes two arguments, the amount of numbers to generate and sort, and the sorting
+function to use, denoted by "sort", "sort2", and "sort3". To make sure we are sorting the
+same numbers, srand(0) was called at the beginning of the main function in both sorttest and
+sorttest2.
+
+------------
+RESULTS
+------------
+
+1000 items:
+"Sort":
+Time spent sorting: Seconds: 0, Microseconds: 2195
+Time spent sorting: Seconds: 0, Microseconds: 2200
+Time spent sorting: Seconds: 0, Microseconds: 2234
+Average: 2210 Microseconds
+"Sort2":
+Time spent sorting: Seconds: 0, Microseconds: 2259
+Time spent sorting: Seconds: 0, Microseconds: 2367
+Time spent sorting: Seconds: 0, Microseconds: 2258
+Average: 2295 Microseconds
+"Sort3":
+Time spent sorting: Seconds: 0, Microseconds: 2
+Time spent sorting: Seconds: 0, Microseconds: 2
+Time spent sorting: Seconds: 0, Microseconds: 3
+Average: 2.33 Microseconds
+
+10000 items:
+"Sort":
+Time spent sorting: Seconds: 0, Microseconds: 325746
+Time spent sorting: Seconds: 0, Microseconds: 326420
+Time spent sorting: Seconds: 0, Microseconds: 318073
+Average: 323413 Microseconds
+"Sort2":
+Time spent sorting: Seconds: 0, Microseconds: 330632
+Time spent sorting: Seconds: 0, Microseconds: 332049
+Time spent sorting: Seconds: 0, Microseconds: 336059
+Average: 332913 Microseconds
+"Sort3":
+Time spent sorting: Seconds: 0, Microseconds: 23
+Time spent sorting: Seconds: 0, Microseconds: 31
+Time spent sorting: Seconds: 0, Microseconds: 23
+Average: 25.67 Microseconds
+
+25000 items:
+"Sort":
+Time spent sorting: Seconds: 1, Microseconds: 876021
+Time spent sorting: Seconds: 1, Microseconds: 806374
+Time spent sorting: Seconds: 1, Microseconds: 808116
+Average: 1.830 Seconds
+"Sort2":
+Time spent sorting: Seconds: 1, Microseconds: 873131
+Time spent sorting: Seconds: 1, Microseconds: 957164
+Time spent sorting: Seconds: 1, Microseconds: 765743
+Average: 1.865 Seconds
+"Sort3":
+Time spent sorting: Seconds: 0, Microseconds: 56
+Time spent sorting: Seconds: 0, Microseconds: 56
+Time spent sorting: Seconds: 0, Microseconds: 55
+Average: 55.67 Microseconds
+
+	Looking at the data, it is clear to see that using array notation to access data is
+far slower than using pointer notation to access that same data. Because the pointer must start
+from scratch every time with array notation, it takes far longer to move somewhere, wheresas 
+pointer notation means it just moves over 1 every time, which is very quick and easy to execute.

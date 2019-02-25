@@ -6,9 +6,9 @@
  * outputs them, sorts them in descending order, and outputs the sorted list.
  *
  * Usage:
- *         ./sorttest some_number another_number ...
+ *         ./sorttest2 some_number another_number ...
  * Example:
- *         ./sorttest 2014 15 7000
+ *         ./sorttest2 2014 15 7000
  *
  */
 
@@ -21,31 +21,34 @@
 int main (int argc, const char* argv[]) {
 	srand(0);
 	int *nums; // space to store numbers entered from the command line.
-	int next_num; // Integer read from the command line goes here.
-	int i; // array index
+
+	int i; //array loop variable declaration
 	int num_nums; // How many numbers actually entered on the command line.
+	char* func; //the sorting function to use
 
-	// Check that there are at least two numbers
-	num_nums = argc - 1;
-	if (num_nums < 2) {
-	printf("Must enter at least 2 numbers on the command line! Exiting.\n");
-	return 1; // Indicate failure
+	if(argc < 3) {
+	  printf("Must indicate an array size and which sort function to use!\n");
+	  printf("The possible options are: sort, sort2, sort3. Exiting Program!\n");
+	  return 1;
 	}
-
+	else {
+	  num_nums = atoi(argv[1]);
+	  func = argv[2];
+	}
 	// Allocate an array big enough to hold the numbers
 	nums = (int*) calloc(num_nums, sizeof(int));
 	if (nums == NULL) {
-	fprintf(stderr, "Unable to allocate enough memory to hold the numbers.\n");
+		fprintf(stderr, "Unable to allocate enough memory to hold the numbers.\n");
 	}
 
 	/* Read all the numbers from the command line and put them into the array */
 	for (i = 0; i < num_nums; i++) {
-	next_num = atoi(argv[i+1]); // Get string from command line; convert to int
-	nums[i] = next_num; // store into the array
+	  nums[i] = rand();
 	}
 
 	// Now print, sort, and print the array, and time how long the sorting took.
-	timesort(nums, num_nums, "sort");
+	timesort(nums, num_nums, func);
 
 	return 0; // Indicate success!
+
 }
