@@ -8,10 +8,10 @@
  */
 
 void print_int_array(int nums[], int count) {
-  int i; // Loop counter
-  for (i = 0; i < count; i++) {
-    printf("%d\n", nums[i]); // Print each array element in turn
-  }
+	int i; // Loop counter
+	for (i = 0; i < count; i++) {
+		printf("%d\n", nums[i]); // Print each array element in turn
+	}
 }
 
 /** Sorts an array of integers into descending order.
@@ -23,29 +23,29 @@ void print_int_array(int nums[], int count) {
  */
 
 void sort_descending(int nums[], int count) {
-  int round; // How many times left to go through the outer loop.
-  int i; // Loop counter for the inner loop
-  int inorder; // Used as a boolean (logical). 1 = array is in correct order.
-  int temp; // Temporary variable used while swapping array elements
+	int round; // How many times left to go through the outer loop.
+	int i; // Loop counter for the inner loop
+	int inorder; // Used as a boolean (logical). 1 = array is in correct order.
+	int temp; // Temporary variable used while swapping array elements
 
-  inorder = 0; // Assume not sorted at the beginning
+	inorder = 0; // Assume not sorted at the beginning
 
-  // Repeat outer loop, one time less than the size of the array.
-  // Terminate early if array is in correct order.
-  for(round = count - 1; (round > 0) && (!inorder); round--) {
-    inorder = 1; // Assume in correct order, until found otherwise.
-    // Repeat inner loop, testing array elements 0 through round
-    for (i = 0; i < round; i++) {
-      // Compare two adjacent elements of the array
-      if (nums[i] < nums[i+1]) {
-	// Not in correct relative order, so swap.
-	inorder = 0; // At least one pair had to be swapped
-	temp = nums[i]; // Swap!
-	nums[i] = nums[i+1];
-	nums[i+1] = temp;
-      }
-    }
-  }
+	// Repeat outer loop, one time less than the size of the array.
+	// Terminate early if array is in correct order.
+	for(round = count - 1; (round > 0) && (!inorder); round--) {
+		inorder = 1; // Assume in correct order, until found otherwise.
+		// Repeat inner loop, testing array elements 0 through round
+		for (i = 0; i < round; i++) {
+			// Compare two adjacent elements of the array
+			if (nums[i] < nums[i+1]) {
+				// Not in correct relative order, so swap.
+				inorder = 0; // At least one pair had to be swapped
+				temp = nums[i]; // Swap!
+				nums[i] = nums[i+1];
+				nums[i+1] = temp;
+			}
+		}
+	}
 }
 
 /** Sorts an array of integers into descending order.
@@ -57,29 +57,29 @@ void sort_descending(int nums[], int count) {
  */
 
 void sort_descending2(int nums[], int count) {
-  int round; // How many times left to go through the outer loop.
-  int i; // Loop counter for the inner loop
-  int inorder; // Used as a boolean (logical). 1 = array is in correct order.
-  int temp; // Temporary variable used while swapping array elements
+	int round; // How many times left to go through the outer loop.
+	int i; // Loop counter for the inner loop
+	int inorder; // Used as a boolean (logical). 1 = array is in correct order.
+	int temp; // Temporary variable used while swapping array elements
 
-  inorder = 0; // Assume not sorted at the beginning
+	inorder = 0; // Assume not sorted at the beginning
 
-  // Repeat outer loop, one time less than the size of the array.
-  // Terminate early if array is in correct order.
-  for(round = count - 1; (round > 0) && (!inorder); round--) {
-    inorder = 1; // Assume in correct order, until found otherwise.
-    // Repeat inner loop, testing array elements 0 through round
-    for (i = 0; i < round; i++) {
-      // Compare two adjacent elements of the array
-      if (*(nums+i) < *(nums+i+1)) {
-	// Not in correct relative order, so swap.
-	inorder = 0; // At least one pair had to be swapped
-	temp = *(nums+i); // Swap!
-	*(nums+i) = *(nums+i+1);
-	*(nums+i+1) = temp;
-      }
-    }
-  }
+	// Repeat outer loop, one time less than the size of the array.
+	// Terminate early if array is in correct order.
+	for(round = count - 1; (round > 0) && (!inorder); round--) {
+		inorder = 1; // Assume in correct order, until found otherwise.
+		// Repeat inner loop, testing array elements 0 through round
+		for (i = 0; i < round; i++) {
+			// Compare two adjacent elements of the array
+			if (*(nums+i) < *(nums+i+1)) {
+				// Not in correct relative order, so swap.
+				inorder = 0; // At least one pair had to be swapped
+				temp = *(nums+i); // Swap!
+				*(nums+i) = *(nums+i+1);
+				*(nums+i+1) = temp;
+			}
+		}
+	}
 }
 
 /** Sorts an array of integers into descending order.
@@ -91,33 +91,33 @@ void sort_descending2(int nums[], int count) {
  */
 
 void sort_descending3(int nums[], int count) {
-  int round; // How many times left to go through the outer loop.
-  int i; // Loop counter for the inner loop
-  int inorder; // Used as a boolean (logical). 1 = array is in correct order.
-  int temp; // Temporary variable used while swapping array elements
+	int round; // How many times left to go through the outer loop.
+	int i; // Loop counter for the inner loop
+	int inorder; // Used as a boolean (logical). 1 = array is in correct order.
+	int temp; // Temporary variable used while swapping array elements
 
-  inorder = 0; // Assume not sorted at the beginning
+	inorder = 0; // Assume not sorted at the beginning
 
-  // Repeat outer loop, one time less than the size of the array.
-  // Terminate early if array is in correct order.
-  for(round = count - 1; (round > 0) && (!inorder); round--) {
-    inorder = 1; // Assume in correct order, until found otherwise.
-    // Repeat inner loop, testing array elements 0 through round
-    for (i = 0; i < round; i++) {
-    	int* arrayPtr1 = nums;
-    	int* arrayPtr2 = nums++; //initialize pointers to the array
-      // Compare two adjacent elements of the array
-      if (*arrayPtr1 <* arrayPtr2) {
-	// Not in correct relative order, so swap.
-	inorder = 0; // At least one pair had to be swapped
-	temp = *arrayPtr1; // Swap!
-	*arrayPtr1 = *arrayPtr2;
-	*arrayPtr2 = temp;
-	arrayPtr1++;
-	arrayPtr2++; //increment pointers
-      }
-    }
-  }
+	// Repeat outer loop, one time less than the size of the array.
+	// Terminate early if array is in correct order.
+	for(round = count - 1; (round > 0) && (!inorder); round--) {
+		inorder = 1; // Assume in correct order, until found otherwise.
+		// Repeat inner loop, testing array elements 0 through round
+		for (i = 0; i < round; i++) {
+			int* arrayPtr1 = nums;
+			int* arrayPtr2 = nums++; //initialize pointers to the array
+			// Compare two adjacent elements of the array
+			if (*arrayPtr1 <* arrayPtr2) {
+				// Not in correct relative order, so swap.
+				inorder = 0; // At least one pair had to be swapped
+				temp = *arrayPtr1; // Swap!
+				*arrayPtr1 = *arrayPtr2;
+				*arrayPtr2 = temp;
+				arrayPtr1++;
+				arrayPtr2++; //increment pointers
+			}
+		}
+	}
 }
 
 /** Prints the contents of a timeval struct.

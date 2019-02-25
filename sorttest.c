@@ -28,20 +28,20 @@ int main (int argc, const char* argv[]) {
 	// Check that there are at least two numbers
 	num_nums = argc - 1;
 	if (num_nums < 2) {
-	printf("Must enter at least 2 numbers on the command line! Exiting.\n");
-	return 1; // Indicate failure
+		printf("Must enter at least 2 numbers on the command line! Exiting.\n");
+		return 1; // Indicate failure
 	}
 
 	// Allocate an array big enough to hold the numbers
 	nums = (int*) calloc(num_nums, sizeof(int));
 	if (nums == NULL) {
-	fprintf(stderr, "Unable to allocate enough memory to hold the numbers.\n");
+		fprintf(stderr, "Unable to allocate enough memory to hold the numbers.\n");
 	}
 
 	/* Read all the numbers from the command line and put them into the array */
 	for (i = 0; i < num_nums; i++) {
-	next_num = atoi(argv[i+1]); // Get string from command line; convert to int
-	nums[i] = next_num; // store into the array
+		next_num = atoi(argv[i+1]); // Get string from command line; convert to int
+		nums[i] = next_num; // store into the array
 	}
 
 	// Now print, sort, and print the array, and time how long the sorting took.

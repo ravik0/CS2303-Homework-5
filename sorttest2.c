@@ -27,13 +27,13 @@ int main (int argc, const char* argv[]) {
 	char* func; //the sorting function to use
 
 	if(argc < 3) {
-	  printf("Must indicate an array size and which sort function to use!\n");
-	  printf("The possible options are: sort, sort2, sort3. Exiting Program!\n");
-	  return 1;
+		printf("Must indicate an array size and which sort function to use!\n");
+		printf("The possible options are: sort, sort2, sort3. Exiting Program!\n");
+		return 1;
 	}
 	else {
-	  num_nums = atoi(argv[1]);
-	  func = argv[2];
+		num_nums = atoi(argv[1]);
+		func = argv[2];
 	}
 	// Allocate an array big enough to hold the numbers
 	nums = (int*) calloc(num_nums, sizeof(int));
@@ -43,12 +43,11 @@ int main (int argc, const char* argv[]) {
 
 	/* Read all the numbers from the command line and put them into the array */
 	for (i = 0; i < num_nums; i++) {
-	  nums[i] = rand();
+		nums[i] = rand();
 	}
 
 	// Now print, sort, and print the array, and time how long the sorting took.
 	timesort(nums, num_nums, func);
 
 	return 0; // Indicate success!
-
 }
