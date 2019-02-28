@@ -24,10 +24,10 @@ Time spent sorting: Seconds: 0, Microseconds: 2367
 Time spent sorting: Seconds: 0, Microseconds: 2258
 Average: 2295 Microseconds
 "Sort3":
-Time spent sorting: Seconds: 0, Microseconds: 2
-Time spent sorting: Seconds: 0, Microseconds: 2
-Time spent sorting: Seconds: 0, Microseconds: 3
-Average: 2.33 Microseconds
+Time spent sorting: Seconds: 0, Microseconds: 1809
+Time spent sorting: Seconds: 0, Microseconds: 1783
+Time spent sorting: Seconds: 0, Microseconds: 1806
+Average: 1799 Microseconds
 
 10000 items:
 "Sort":
@@ -41,29 +41,29 @@ Time spent sorting: Seconds: 0, Microseconds: 332049
 Time spent sorting: Seconds: 0, Microseconds: 336059
 Average: 332913 Microseconds
 "Sort3":
-Time spent sorting: Seconds: 0, Microseconds: 23
-Time spent sorting: Seconds: 0, Microseconds: 31
-Time spent sorting: Seconds: 0, Microseconds: 23
-Average: 25.67 Microseconds
+Time spent sorting: Seconds: 0, Microseconds: 289356
+Time spent sorting: Seconds: 0, Microseconds: 295727
+Time spent sorting: Seconds: 0, Microseconds: 282204
+Average: 289096 Microseconds
 
 25000 items:
 "Sort":
-Time spent sorting: Seconds: 1, Microseconds: 876021
-Time spent sorting: Seconds: 1, Microseconds: 806374
-Time spent sorting: Seconds: 1, Microseconds: 808116
-Average: 1.830 Seconds
+Time spent sorting: Seconds: 2, Microseconds: 77894
+Time spent sorting: Seconds: 2, Microseconds: 159211
+Time spent sorting: Seconds: 2, Microseconds: 151509
+Average: 2.129 Seconds
 "Sort2":
-Time spent sorting: Seconds: 1, Microseconds: 873131
-Time spent sorting: Seconds: 1, Microseconds: 957164
-Time spent sorting: Seconds: 1, Microseconds: 765743
-Average: 1.865 Seconds
+Time spent sorting: Seconds: 2, Microseconds: 212237
+Time spent sorting: Seconds: 2, Microseconds: 251689
+Time spent sorting: Seconds: 2, Microseconds: 226471
+Average: 2.230 Seconds
 "Sort3":
-Time spent sorting: Seconds: 0, Microseconds: 56
-Time spent sorting: Seconds: 0, Microseconds: 56
-Time spent sorting: Seconds: 0, Microseconds: 55
-Average: 55.67 Microseconds
+Time spent sorting: Seconds: 1, Microseconds: 880842
+Time spent sorting: Seconds: 1, Microseconds: 888727
+Time spent sorting: Seconds: 1, Microseconds: 921798
+Average: 1.897 Seconds
 
-	Looking at the data, it is clear to see that using array notation to access data is
-far slower than using pointer notation to access that same data. Because the pointer must start
-from scratch every time with array notation, it takes far longer to move somewhere, whereas 
-pointer notation means it just moves over 1 every time, which is very quick and easy to execute.
+	Looking at the data, it is clear to see that using array notation to access data is 
+slower than using pointer notation to access that same data. Because the pointer must start
+from scratch every time with array notation, it takes longer to move somewhere, whereas 
+pointer notation means it just moves over 1 every time, which is quicker and easier to execute.

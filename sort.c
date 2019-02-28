@@ -103,19 +103,20 @@ void sort_descending3(int nums[], int count) {
 	for(round = count - 1; (round > 0) && (!inorder); round--) {
 		inorder = 1; // Assume in correct order, until found otherwise.
 		// Repeat inner loop, testing array elements 0 through round
+		int* arrayPtr1 = nums;
+		int* arrayPtr2 = nums;
+		arrayPtr2++;//initialize pointers to the array
 		for (i = 0; i < round; i++) {
-			int* arrayPtr1 = nums;
-			int* arrayPtr2 = nums++; //initialize pointers to the array
 			// Compare two adjacent elements of the array
-			if (*arrayPtr1 <* arrayPtr2) {
+			if (*arrayPtr1 < *arrayPtr2) {
 				// Not in correct relative order, so swap.
 				inorder = 0; // At least one pair had to be swapped
 				temp = *arrayPtr1; // Swap!
 				*arrayPtr1 = *arrayPtr2;
 				*arrayPtr2 = temp;
-				arrayPtr1++;
-				arrayPtr2++; //increment pointers
 			}
+			arrayPtr1++;
+			arrayPtr2++; //increment pointers
 		}
 	}
 }
